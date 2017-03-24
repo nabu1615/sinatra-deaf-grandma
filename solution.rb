@@ -5,7 +5,11 @@ get '/' do
 end
 
 post '/answer' do
-	@word = "Ahhh si, #{params[:word]}!"
-	@word = @word.upcase
+	@word = params[:word]
+	if @word == @word.upcase
+		@answer = "Ahhh si, manzanas!"
+	else
+		@answer = "Habla más duro mijito"
+	end
 	erb :answer
 end
